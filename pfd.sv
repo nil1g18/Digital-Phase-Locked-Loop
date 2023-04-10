@@ -37,7 +37,10 @@ always_ff @(posedge Clock, negedge nReset)
 			end
 		
 		1: if(f_1 == 0)
+			begin
 			f_out <= f_count;
+			state2 <= 0;
+			end
 			else
 			f_count <= f_count + 1;
 		
