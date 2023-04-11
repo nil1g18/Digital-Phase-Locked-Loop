@@ -36,13 +36,13 @@ always_ff @(posedge Clock, negedge nReset)
 			state2 <= 1;
 			end
 		
-		1: if(f_1 == 0)
-			begin
+		1: if(f_1 == 0) begin
 			f_out <= f_count;
 			state2 <= 0;
 			end
 			else
-			f_count <= f_count + 1;
+			if(f_count < 2**`N_BIT-2)
+				f_count <= f_count + 1;
 		
 		default: state2 <= 0;
 		endcase
@@ -83,7 +83,7 @@ always_ff @(posedge Clock, negedge nReset)
 				state <= 0;
 				end
 				
-			if(timeout_counter >= (2**`N_BIT-2)*2)
+			if(timeout_counter >= (2**`N_BIT-2))
 				state <= 2;
 			end
 		

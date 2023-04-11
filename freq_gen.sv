@@ -32,9 +32,22 @@ always_ff @(posedge Clock, negedge nReset)
 		if(ready)
 			skip <= !skip;
 				
-		if(ready & skip) begin
-			if(difference >= 0)
-				difference <= difference + diff_2 - diff_1;
+		if(ready) begin
+			if(diff_1 + diff_2 > 0)
+				if(skip)
+					if(first_second)
+						difference <= diff_1+1;
+					else
+						difference <= -diff_1-1;
+				else
+					if(first_second)
+						difference <= diff_1;
+					else
+						difference <= -diff_1;
+			else
+				difference <= 0;
+
+			
 			end
 	
 		case(state)
@@ -51,7 +64,6 @@ always_ff @(posedge Clock, negedge nReset)
 		
 		//LOW
 		1: begin
-			if(first_second)
 				if(counter >= f_in + difference)
 					begin
 					counter <= 0;
@@ -59,25 +71,8 @@ always_ff @(posedge Clock, negedge nReset)
 					end
 				else
 					counter <= counter + 1;
-			else
-				if(f_in + difference >= 2)
-					if(counter >= f_in - difference)
-					begin
-						counter <= 0;
-						state <= 0;
-						end
-					else
-						counter <= counter + 1;
-				else
-				if(counter >= f_in)
-					begin
-						counter <= 0;
-						state <= 0;
-						end
-					else
-						counter <= counter + 1;
 			end
-		
+			
 		default: state <= 0;
 		endcase
 	end

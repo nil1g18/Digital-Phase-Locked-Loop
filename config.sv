@@ -1,0 +1,1 @@
+`define N_BIT 16
