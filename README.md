@@ -1,5 +1,8 @@
-# Digital Signal repeater
+# Digital Signal Repeater
 A Signal repeater built in SystemVerilog that hasn't been synthesized (but should be able to I hope) as I do not own an FPGA or equipment to test it.
+
+Functions:
+Generate a signal that is approximately identical to the input signal (same frequency and phase)
 
 Limitations (theoretical and estimated, haven't spent time analysing the system):
 - Only works with signals with ~50% duty cycle
