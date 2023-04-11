@@ -1,5 +1,5 @@
-# Digital-Phase-Locked-Loop
-A Digital Phase-Locked-Loop built in SystemVerilog that hasn't been synthesized (but should be able to I hope) as I do not own an FPGA or equipment to test it.
+# Digital Signal repeater
+A Signal repeater built in SystemVerilog that hasn't been synthesized (but should be able to I hope) as I do not own an FPGA or equipment to test it.
 
 Limitations (theoretical and estimated, haven't spent time analysing the system):
 - Only works with signals with ~50% duty cycle
@@ -22,4 +22,7 @@ It will attempt to correct its phase by delaying or speeding the signal using in
 
 Sample results using pll_d_test.sv where freq_in is the input signal and freq_sync is the output signal:
 ![image](https://user-images.githubusercontent.com/99904618/231065873-97bb34b0-ff60-4592-a1c9-671f09b54b70.png)
+
+To do soon:
+  Have it generate a different frequency to the input
 
