@@ -26,6 +26,6 @@ It will attempt to correct its phase by delaying or speeding the signal using in
 Sample results using pll_d_test.sv where freq_in is the input signal and freq_sync is the output signal:
 ![image](https://user-images.githubusercontent.com/99904618/231065873-97bb34b0-ff60-4592-a1c9-671f09b54b70.png)
 
-To do soon:
+To do (maybe):
   Have it generate a different frequency to the input and still be in phase (like an actual PLL)
 
