@@ -14,7 +14,7 @@ Summary of how this works:
 
 There are 2 modules in the system.
   - Phase Frequency Detector
-  - Signal generator
+  - Signal generator (A lazy attempt to create a digital version of the voltage controlled oscillator)
   
 The PFD compares returns the frequency value of the main input signal by comparing it to the base clock frequency, using a counter.
 It detects the lead-lag of the two input signals (main and feedback).
